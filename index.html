@@ -3,49 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veren & Artur - Unsere Hochzeit</title>
-    <meta name="description" content="Hochzeits-Website von Veren und Artur - Fotogalerien von Standesamt, Hochzeitsfeier und persönlichen Momenten">
-    <link rel="stylesheet" href="style.css">
+    <title>UNSERE HOCHZEIT - Verena & Artur</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Veren & Artur</h1>
-        <p>Unsere Hochzeit - Ein Tag voller Liebe und Glück</p>
+    <!-- Header mit Navigation -->
+    <header class="header">
+        <div class="eucalyptus-decoration">
+            <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Realistischer Aquarell-Eukalyptus-Zweig -->
+                <defs>
+                    <radialGradient id="leaf1" cx="50%" cy="30%" r="70%">
+                        <stop offset="0%" style="stop-color:#9cb896;stop-opacity:0.8"/>
+                        <stop offset="100%" style="stop-color:#7a9b76;stop-opacity:0.4"/>
+                    </radialGradient>
+                    <radialGradient id="leaf2" cx="60%" cy="40%" r="60%">
+                        <stop offset="0%" style="stop-color:#8fae8b;stop-opacity:0.7"/>
+                        <stop offset="100%" style="stop-color:#5d7a5a;stop-opacity:0.3"/>
+                    </radialGradient>
+                </defs>
+                
+                <!-- Hauptstamm -->
+                <path d="M25 75 Q35 65 40 50 Q45 35 50 20 Q52 15 55 10" stroke="#7a9b76" stroke-width="3" fill="none" opacity="0.8"/>
+                
+                <!-- Eukalyptusblätter - realistischere ovale Form -->
+                <ellipse cx="22" cy="65" rx="6" ry="14" fill="url(#leaf1)" transform="rotate(-15 22 65)"/>
+                <ellipse cx="38" cy="55" rx="7" ry="12" fill="url(#leaf2)" transform="rotate(25 38 55)"/>
+                <ellipse cx="30" cy="45" rx="8" ry="16" fill="url(#leaf1)" transform="rotate(-35 30 45)"/>
+                <ellipse cx="45" cy="40" rx="6" ry="13" fill="url(#leaf2)" transform="rotate(45 45 40)"/>
+                <ellipse cx="38" cy="30" rx="7" ry="15" fill="url(#leaf1)" transform="rotate(-25 38 30)"/>
+                <ellipse cx="52" cy="25" rx="5" ry="11" fill="url(#leaf2)" transform="rotate(35 52 25)"/>
+                <ellipse cx="48" cy="15" rx="6" ry="12" fill="url(#leaf1)" transform="rotate(-20 48 15)"/>
+                
+                <!-- Seitenzweige -->
+                <path d="M35 50 Q28 48 20 45" stroke="#7a9b76" stroke-width="2" fill="none" opacity="0.6"/>
+                <path d="M42 35 Q50 33 58 30" stroke="#7a9b76" stroke-width="2" fill="none" opacity="0.6"/>
+                
+                <!-- Zusätzliche kleine Blätter an Seitenzweigen -->
+                <ellipse cx="18" cy="44" rx="4" ry="8" fill="url(#leaf2)" transform="rotate(-45 18 44)"/>
+                <ellipse cx="60" cy="29" rx="4" ry="9" fill="url(#leaf1)" transform="rotate(30 60 29)"/>
+                
+                <!-- Aquarell-Effekt durch zusätzliche transparente Schichten -->
+                <ellipse cx="25" cy="62" rx="8" ry="16" fill="#9cb896" opacity="0.2" transform="rotate(-10 25 62)"/>
+                <ellipse cx="42" cy="52" rx="9" ry="14" fill="#8fae8b" opacity="0.15" transform="rotate(20 42 52)"/>
+                <ellipse cx="35" cy="42" rx="10" ry="18" fill="#7a9b76" opacity="0.1" transform="rotate(-30 35 42)"/>
+            </svg>
+        </div>
+        
+        <nav class="navigation">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Startseite</a></li>
+                <li><a href="#galerien" class="nav-link">Galerien</a></li>
+                <li><a href="#hochzeitssong" class="nav-link">Hochzeitssong</a></li>
+                <li><a href="#umfrage" class="nav-link">Umfrage</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <nav>
-        <a href="#standesamt">Standesamt</a>
-        <a href="#hochzeitsfeier">Hochzeitsfeier</a>
-        <a href="#va">V+A</a>
-    </nav>
-    
-    <main>
-        <section id="standesamt">
-            <h2>Standesamt</h2>
-            <p>Die standesamtliche Trauung - der offizielle Beginn unserer Ehe. Hier sind die schönsten Momente von diesem besonderen Tag festgehalten.</p>
-            <!-- Fotogalerie wird durch JavaScript eingefügt -->
+
+    <!-- Hauptinhalt -->
+    <main class="main-content">
+        <!-- Startseite -->
+        <section id="home" class="section active">
+            <div class="hero-content">
+                <h1 class="main-title">UNSERE HOCHZEIT</h1>
+                <div class="couple-names">
+                    <span class="name">Verena</span>
+                    <span class="ampersand">&</span>
+                    <span class="name">Artur</span>
+                </div>
+                <div class="wedding-date">11. Juli 2025</div>
+                <p class="welcome-text-large">
+                    Wir laden euch ein, unseren besonderen Tag hier nochmal zu erleben.
+                </p>
+                <p class="welcome-text-large">
+                    Vielen Dank an alle, die dabei waren, uns unterstützt und für gute Laune gesorgt haben!
+                </p>
+            </div>
+            
+            <!-- Galerie Preview -->
+            <div class="gallery-preview">
+                <div class="image-grid">
+                    <div class="image-card">
+                        <img src="foto1.jpg" alt="Hochzeitsfoto 1" class="gallery-image">
+                        <div class="image-overlay">
+                            <span class="image-label">Verlobung</span>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="foto2.jpg" alt="Hochzeitsfoto 2" class="gallery-image">
+                        <div class="image-overlay">
+                            <span class="image-label">Standesamt</span>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="foto3.jpg" alt="Hochzeitsfoto 3" class="gallery-image">
+                        <div class="image-overlay">
+                            <span class="image-label">Feier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        
-        <section id="hochzeitsfeier">
-            <h2>Hochzeitsfeier</h2>
-            <p>Unsere große Hochzeitsfeier mit Familie und Freunden. Ein Tag voller Freude, Tanz und unvergesslicher Erinnerungen.</p>
-            <!-- Fotogalerie wird durch JavaScript eingefügt -->
+
+        <!-- Galerien -->
+        <section id="galerien" class="section">
+            <h2 class="section-title">Unsere Fotogalerien</h2>
+            <p class="gallery-description">Vielen Dank an Ramona für die tollen Fotos vom Eintreffen im Standesamt bis in die späten Abendstunden!</p>
+            <div class="gallery-categories">
+                <div class="category-card" data-gallery="standesamt">
+                    <h3>Standesamt</h3>
+                    <p>Die ofizielle Trauung im kleinen Kreis</p>
+                    <div class="category-images">
+                        <img src="Standesamt/DSC03673.jpg" alt="Standesamt 1" class="category-preview">
+                        <img src="Standesamt/DSC03681-Bearbeitet.jpg" alt="Standesamt 2" class="category-preview">
+                    </div>
+                </div>
+                <div class="category-card" data-gallery="hochzeitsfeier">
+                    <h3>Hochzeitsfeier</h3>
+                    <p>Die große Feier mit Familie und Freunden</p>
+                    <div class="category-images">
+                        <img src="bild3.jpg" alt="Feier 1" class="category-preview">
+                        <img src="bild4.jpg" alt="Feier 2" class="category-preview">
+                    </div>
+                </div>
+                <div class="category-card" data-gallery="paarfotos">
+                    <h3>Paarfotos</h3>
+                    <p>Romantische Momente zu zweit</p>
+                    <div class="category-images">
+                        <img src="bild1.jpg" alt="Paar 1" class="category-preview">
+                        <img src="bild3.jpg" alt="Paar 2" class="category-preview">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery View -->
+            <div class="gallery-view" id="galleryView">
+                <div class="gallery-header">
+                    <button class="back-btn" id="backToCategories">← Zurück</button>
+                    <h3 class="gallery-title" id="galleryTitle"></h3>
+                </div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Images will be inserted here dynamically -->
+                </div>
+            </div>
         </section>
-        
-        <section id="va">
-            <h2>Veren + Artur</h2>
-            <p>Persönliche Momente und intime Aufnahmen von uns beiden. Diese Fotos zeigen unsere Liebe und unser Glück.</p>
-            <!-- Fotogalerie wird durch JavaScript eingefügt -->
+
+        <!-- Hochzeitssong -->
+        <section id="hochzeitssong" class="section">
+            <h2 class="section-title">Unser Hochzeitssong</h2>
+            <div class="song-content">
+                <div class="music-player">
+                    <div class="player-controls">
+                        <button class="play-btn" id="playBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="time-info">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="audioPlayer" preload="metadata">
+                        <source src="Hochzeitssong.mp3" type="audio/mpeg">
+                        Ihr Browser unterstützt das Audio-Element nicht.
+                    </audio>
+                </div>
+                <div class="lyrics-image">
+                    <img src="Lyrics.jpg" alt="Songtext" class="lyrics-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Umfrage -->
+        <section id="umfrage" class="section">
+            <h2 class="section-title">Umfrage</h2>
+            <div class="survey-content">
+                
+                <div class="survey-header">
+                    <div class="survey-avatars">
+                        <div class="avatar-container">
+                            <img src="Faultier.jpg" alt="Artur" class="avatar" id="arturavatar">
+                            <span class="avatar-name">Artur</span>
+                        </div>
+                        <div class="vs-divider">VS</div>
+                        <div class="avatar-container">
+                            <img src="Panda.jpg" alt="Verena" class="avatar" id="verenavatar">
+                            <span class="avatar-name">Verena</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="survey-questions">
+                    <div class="question-item">
+                        <h3 class="question-title">Wer hat in der Beziehung die Hosen an?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 33%">
+                                <span class="vote-percentage">33%</span>
+                            </div>
+                            <div class="vote-right" style="width: 67%">
+                                <span class="vote-percentage">67%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer hat den Heiratsantrag gemacht?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 52%">
+                                <span class="vote-percentage">52%</span>
+                            </div>
+                            <div class="vote-right" style="width: 48%">
+                                <span class="vote-percentage">48%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer braucht morgens länger im Bad?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 50%">
+                                <span class="vote-percentage">50%</span>
+                            </div>
+                            <div class="vote-right" style="width: 50%">
+                                <span class="vote-percentage">50%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist zickiger?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 0%">
+                                <span class="vote-percentage">0%</span>
+                            </div>
+                            <div class="vote-right" style="width: 100%">
+                                <span class="vote-percentage">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist der Morgenmuffel?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 40%">
+                                <span class="vote-percentage">40%</span>
+                            </div>
+                            <div class="vote-right" style="width: 60%">
+                                <span class="vote-percentage">60%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer gibt bei einem Streit zuerst nach?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 50%">
+                                <span class="vote-percentage">50%</span>
+                            </div>
+                            <div class="vote-right" style="width: 50%">
+                                <span class="vote-percentage">50%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer verträgt mehr Alkohol?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 48%">
+                                <span class="vote-percentage">48%</span>
+                            </div>
+                            <div class="vote-right" style="width: 52%">
+                                <span class="vote-percentage">52%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist betrunkener lustiger?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 38%">
+                                <span class="vote-percentage">38%</span>
+                            </div>
+                            <div class="vote-right" style="width: 62%">
+                                <span class="vote-percentage">62%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer fährt besser Auto?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 40%">
+                                <span class="vote-percentage">40%</span>
+                            </div>
+                            <div class="vote-right" style="width: 60%">
+                                <span class="vote-percentage">60%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer schnarcht lauter?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 60%">
+                                <span class="vote-percentage">60%</span>
+                            </div>
+                            <div class="vote-right" style="width: 40%">
+                                <span class="vote-percentage">40%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist unordentlicher?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 19%">
+                                <span class="vote-percentage">19%</span>
+                            </div>
+                            <div class="vote-right" style="width: 81%">
+                                <span class="vote-percentage">81%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist der bessere Koch?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 77%">
+                                <span class="vote-percentage">77%</span>
+                            </div>
+                            <div class="vote-right" style="width: 23%">
+                                <span class="vote-percentage">23%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer gibt mehr Geld für Klamotten aus?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 62%">
+                                <span class="vote-percentage">62%</span>
+                            </div>
+                            <div class="vote-right" style="width: 38%">
+                                <span class="vote-percentage">38%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer macht morgens das Frühstück?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 50%">
+                                <span class="vote-percentage">50%</span>
+                            </div>
+                            <div class="vote-right" style="width: 50%">
+                                <span class="vote-percentage">50%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer isst mehr Süßigkeiten?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 62%">
+                                <span class="vote-percentage">62%</span>
+                            </div>
+                            <div class="vote-right" style="width: 38%">
+                                <span class="vote-percentage">38%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer schläft am schnellsten ein?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 75%">
+                                <span class="vote-percentage">75%</span>
+                            </div>
+                            <div class="vote-right" style="width: 25%">
+                                <span class="vote-percentage">25%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist sturer?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 20%">
+                                <span class="vote-percentage">20%</span>
+                            </div>
+                            <div class="vote-right" style="width: 80%">
+                                <span class="vote-percentage">80%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h3 class="question-title">Wer ist lustiger?</h3>
+                        <div class="vote-bar">
+                            <div class="vote-left" style="width: 36%">
+                                <span class="vote-percentage">36%</span>
+                            </div>
+                            <div class="vote-right" style="width: 64%">
+                                <span class="vote-percentage">64%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <footer style="text-align: center; padding: 2rem; color: #666; background: white; margin-top: 2rem;">
-        <p>&copy; 2024 Veren & Artur - Mit Liebe erstellt für unsere Hochzeit</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Verena & Artur - Unser besonderer Tag</p>
     </footer>
-    
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">×</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+            <img class="lightbox-image" id="lightboxImage" alt="">
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
