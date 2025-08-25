@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+/* OBERSTE REGEL: Alle Fotoanzeigen - object-fit contain für vollständige Anzeige */
+.lightbox-image {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
 :root {
     --off-white: #fdfbf8;
     --dark-gray: #2c2c2c;
@@ -334,7 +344,7 @@ h1, h2, h3 {
 
 .gallery-item img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 60vh;
     width: auto !important;
     height: auto !important;
     object-fit: contain !important;
@@ -719,6 +729,13 @@ h1, h2, h3 {
     transform: translateX(-50%);
     color: white;
     font-size: 1rem;
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 1024px) {
+    .gallery-item img {
+        max-height: 70vh !important;
+    }
 }
 
 /* Responsive Design */
