@@ -157,6 +157,36 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentGallery = [];
     let currentImageIndex = 0;
     
+    // Function to get 3 random images from a gallery
+    function getRandomThumbnails(images, count = 3) {
+        const shuffled = [...images].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, Math.min(count, images.length));
+    }
+    
+    // Initialize category thumbnails
+    function initializeCategoryThumbnails() {
+        const categoryImagesContainers = document.querySelectorAll('.category-images[data-gallery-type]');
+        
+        categoryImagesContainers.forEach(container => {
+            const galleryType = container.dataset.galleryType;
+            const gallery = galleries[galleryType];
+            
+            if (gallery && gallery.images.length > 0) {
+                const randomImages = getRandomThumbnails(gallery.images);
+                container.innerHTML = '';
+                
+                randomImages.forEach((imageSrc, index) => {
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = `${gallery.title} ${index + 1}`;
+                    img.className = 'category-preview';
+                    img.loading = 'lazy';
+                    container.appendChild(img);
+                });
+            }
+        });
+    }
+    
     // Gallery data
     const galleries = {
         standesamt: {
@@ -172,16 +202,66 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Standesamt/DSC03783.jpg', 'Standesamt/DSC03804-Bearbeitet.jpg',
                 'Standesamt/DSC03806.jpg', 'Standesamt/DSC03820-Bearbeitet.jpg',
                 'Standesamt/DSC03823.jpg', 'Standesamt/DSC03836.jpg',
-                'Standesamt/DSC03841.jpg', 'Standesamt/DSC03843-Bearbeitet.jpg'
+                'Standesamt/DSC03841.jpg', 'Standesamt/DSC03843-Bearbeitet.jpg',
+                'Standesamt/DSC03849-Bearbeitet.jpg', 'Standesamt/DSC03854-Bearbeitet.jpg',
+                'Standesamt/DSC03857-Bearbeitet-Bearbeitet.jpg', 'Standesamt/DSC03865-Bearbeitet.jpg',
+                'Standesamt/DSC03868-Bearbeitet.jpg', 'Standesamt/DSC03870.jpg',
+                'Standesamt/DSC03872.jpg', 'Standesamt/DSC03882.jpg',
+                'Standesamt/DSC03889-Bearbeitet.jpg', 'Standesamt/DSC03900-Bearbeitet.jpg',
+                'Standesamt/DSC03933-Bearbeitet.jpg', 'Standesamt/DSC03967.jpg',
+                'Standesamt/DSC03975.jpg', 'Standesamt/DSC03983.jpg',
+                'Standesamt/DSC04000-Bearbeitet.jpg', 'Standesamt/DSC04010.jpg',
+                'Standesamt/DSC04034-Bearbeitet.jpg', 'Standesamt/DSC04050.jpg',
+                'Standesamt/DSC04069.jpg', 'Standesamt/DSC04094.jpg',
+                'Standesamt/DSC04101.jpg', 'Standesamt/DSC04135.jpg',
+                'Standesamt/DSC04144.jpg', 'Standesamt/DSC04160.jpg',
+                'Standesamt/DSC04175.jpg', 'Standesamt/DSC04192-Bearbeitet.jpg',
+                'Standesamt/DSC04197-Bearbeitet.jpg', 'Standesamt/DSC04207-Bearbeitet.jpg'
             ]
         },
         hochzeitsfeier: {
             title: 'Hochzeitsfeier',
-            images: ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'] // Placeholder - add real images
+            images: [
+                'Hochzeitsfeier/DSC04257.jpg', 'Hochzeitsfeier/DSC04289.jpg',
+                'Hochzeitsfeier/DSC04298.jpg', 'Hochzeitsfeier/DSC04322-Bearbeitet.jpg',
+                'Hochzeitsfeier/DSC04327.jpg', 'Hochzeitsfeier/DSC04328.jpg',
+                'Hochzeitsfeier/DSC04330.jpg', 'Hochzeitsfeier/DSC04340.jpg',
+                'Hochzeitsfeier/DSC04346.jpg', 'Hochzeitsfeier/DSC04349.jpg',
+                'Hochzeitsfeier/DSC04362.jpg', 'Hochzeitsfeier/DSC04364.jpg',
+                'Hochzeitsfeier/DSC04393.jpg', 'Hochzeitsfeier/DSC04405.jpg',
+                'Hochzeitsfeier/DSC04408.jpg', 'Hochzeitsfeier/DSC04417.jpg',
+                'Hochzeitsfeier/DSC04438.jpg', 'Hochzeitsfeier/DSC04457.jpg',
+                'Hochzeitsfeier/DSC04476.jpg', 'Hochzeitsfeier/DSC04493.jpg',
+                'Hochzeitsfeier/DSC04511.jpg', 'Hochzeitsfeier/DSC04520.jpg',
+                'Hochzeitsfeier/DSC04523-Bearbeitet-Bearbeitet-Bearbeitet.jpg', 'Hochzeitsfeier/DSC04534-Bearbeitet.jpg'
+            ]
         },
-        paarfotos: {
-            title: 'Paarfotos',
-            images: ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'] // Placeholder - add real images
+        'verena-artur': {
+            title: 'Verena & Artur',
+            images: [
+                'V+A/07ef8768-a655-4921-a5f2-9fce66300fab.JPG', 'V+A/0b73417d-f3e1-450f-90ce-93c201f16f55.JPG',
+                'V+A/25b4e922-97b6-4688-a3d8-b976014e3dbf.JPG', 'V+A/4c7e235c-6d1d-4411-b80c-010a601cfabf.JPG',
+                'V+A/6c6ea6e7-2764-43e1-8508-7f00afdc14d6.JPG', 'V+A/929d618e-d2d8-4d90-af5f-3fd919e3f0e2.JPG',
+                'V+A/9f480385-afbe-460f-b708-77406458bbce.JPG', 'V+A/DSC00326-2.jpg',
+                'V+A/DSC00371.jpg', 'V+A/DSC00424.jpg', 'V+A/DSC00437.jpg', 'V+A/DSC00459.jpg',
+                'V+A/DSC00755.jpg', 'V+A/DSC00933.jpg', 'V+A/DSC00983.jpg', 'V+A/DSC01189.jpg',
+                'V+A/DSC01232.jpg', 'V+A/DSC01264.jpg', 'V+A/DSC01325.jpg', 'V+A/DSC01400.jpg',
+                'V+A/DSC01951.jpg', 'V+A/DSC02139.jpg', 'V+A/DSC02218-2.jpg', 'V+A/DSC02262.jpg',
+                'V+A/DSC02349.jpg', 'V+A/DSC02595.jpg', 'V+A/DSC02610.jpg', 'V+A/DSC03319.jpg',
+                'V+A/DSC03408.jpg', 'V+A/IMG_0013.jpg', 'V+A/IMG_0101.jpg', 'V+A/IMG_0733.jpg',
+                'V+A/IMG_0848.jpg', 'V+A/IMG_0862.jpg', 'V+A/IMG_1007.jpg', 'V+A/IMG_1575.jpg',
+                'V+A/IMG_1616.jpg', 'V+A/IMG_20211219_132011.jpg', 'V+A/IMG_20220423_101524.jpg',
+                'V+A/IMG_20220430_200740.jpg', 'V+A/IMG_20220501_195819.jpg', 'V+A/IMG_20220605_000735.jpg',
+                'V+A/IMG_20220614_125951.jpg', 'V+A/IMG_20220701_200107.jpg', 'V+A/IMG_20220928_215832.jpg',
+                'V+A/IMG_20230323_223513.jpg', 'V+A/IMG_20231026_195129.jpg', 'V+A/IMG_20240214_191424.jpg',
+                'V+A/IMG_5342.jpg', 'V+A/IMG_6099.jpg', 'V+A/IMG_6489.jpg', 'V+A/IMG_6969.jpg',
+                'V+A/IMG_7371.jpg', 'V+A/IMG_8456.jpg', 'V+A/IMG_9017.jpg', 'V+A/IMG_9047.jpg',
+                'V+A/IMG_9397.jpg', 'V+A/IMG_9723.jpg', 'V+A/IMG_9727.jpg', 'V+A/PXL_20241005_165925167.jpg',
+                'V+A/PXL_20241010_140738254.RAW-01.COVER.jpg', 'V+A/a5678323-048c-46fb-b5f4-02cca6dd16e5.JPG',
+                'V+A/bdb2df81-d6f1-4ce9-845c-e1bebc09c239.JPG', 'V+A/bdc07418-e4e5-4c5d-a843-3b05803b6c25.JPG',
+                'V+A/c14383ce-9772-4297-8e01-8eea7c65f26c.JPG', 'V+A/c43dab5e-df52-46f5-a8b0-f4f59fb6385e.JPG',
+                'V+A/dbecf32b-1cc0-4076-a16f-54803ff467c7.JPG'
+            ]
         }
     };
     
@@ -340,6 +420,9 @@ document.addEventListener('DOMContentLoaded', function() {
     animateElements.forEach(el => {
         observer.observe(el);
     });
+    
+    // Initialize category thumbnails on page load
+    initializeCategoryThumbnails();
 });
 
 // Responsive Navigation Toggle (falls erweitert werden soll)
